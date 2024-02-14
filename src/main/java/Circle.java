@@ -17,6 +17,8 @@ public class Circle
      */
     public Circle()
     {
+        radius = 1.0;
+        location  = new Point();
 
     }
 
@@ -28,7 +30,8 @@ public class Circle
      */
     public Circle(double radius)
     {
-
+        location = new Point();
+        this.radius = radius;
     }
 
     /**
@@ -40,6 +43,8 @@ public class Circle
      */
     public Circle(Point location, double radius)
     {
+        setRadius(radius);
+        setLocation(location);
 
     }
 
@@ -50,7 +55,7 @@ public class Circle
      * @return The radius of this circle.
      */
     public double getRadius()
-    {
+    { return radius;
 
     }
 
@@ -60,7 +65,7 @@ public class Circle
      * @return The location of this circle.
      */
     public Point getLocation()
-    {
+    { return new Point(location);
 
     }
 
@@ -72,6 +77,7 @@ public class Circle
      */
     public void setRadius(double radius)
     {
+        this.radius = radius;
 
     }
 
@@ -82,6 +88,7 @@ public class Circle
      */
     public void setLocation(Point location)
     {
+        this.location = new Point(location);
 
     }
 
@@ -89,11 +96,12 @@ public class Circle
     /**
      * Returns true if the point is in the circle; otherwise false. A point
      * falling on the circle is considered inside the circle.
-     *
+     *\
      * @return true if the point is in the circle; otherwise false
      */
     public boolean contains(Point p)
     {
+        return location.distanceTo(p) <= radius;
 
     }
 
@@ -105,6 +113,7 @@ public class Circle
      */
     public boolean intersects(Circle aCircle)
     {
+        return this.location.distanceTo(aCircle.location) <= this.radius + aCircle.radius;
 
     }
 

@@ -1,10 +1,25 @@
 import java.util.Scanner;
-
 public class Recitation3 {
     public static void main(String[] argv)
     {
         Scanner scan = new Scanner(System.in);
 
-        // add your code here
+
+        System.out.println("Enter x:");
+        int x = scan.nextInt();
+        System.out.println("Enter y:");
+         int y = scan.nextInt();
+
+        Circle circle16 = new Circle(new Point(x,y),16);
+        Circle circle40 = new Circle(new Point(14,2),40);
+        boolean result = circle16.intersects(circle40);
+        if (result)
+        {
+            System.out.println(" Circles intersect!");
+        }
+        else{
+            System.out.println(" Circles do not intersect!");}
+
     }
-}
+    }
+
